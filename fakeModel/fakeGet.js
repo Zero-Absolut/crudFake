@@ -20,8 +20,9 @@ export function arrayFake(req, res ){
             break;
         }
 
-        if(!encounter){
+       
+    }
+     if(!encounter){
             res.end("Nenhum nome encontrado");
         }
-    }
 }
