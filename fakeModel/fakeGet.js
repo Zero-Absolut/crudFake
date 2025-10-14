@@ -9,7 +9,7 @@ export function arrayFake(req, res ){
     ];
 
     const paramSerach = req.parametro.nome;
-    const encounter = false;
+    let encounter = false;
 
     
 
