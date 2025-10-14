@@ -1,9 +1,11 @@
 import express from 'express';
-import { listVerify } from '../middlewares/listVerification.js';
-import { listSerach } from '../controller/listSearch.js';
+import * as listMiddleware from '../middlewares/listVerification.js';
+import * as listController from '../controller/listSearch.js';
 
 const routers = express.Router();
 
-routers.get('/list', listVerify, listSerach);
+routers.get('/list', listMiddleware.listVerify, listController.listSerach);
+
+routers.post('/input', listMiddleware.insertName, listController.insertDatabase);
 
 export default routers;

@@ -1,28 +1,21 @@
-export function arrayFake(req, res ){
+const listaNomesArray = [
+    "Mateus",
+    "Felipe",
+    "Bruno",
+    "Luiz",
+    "Fernando"
+];
 
-        const listaNomesArray = [
-        "Mateus",
-        "Felipe",
-        "Bruno",
-        "Luiz",
-        "Fernando"
-    ];
-
-    const paramSerach = req.parametro.nome;
-    let encounter = false;
-
-    
-
-    for(var i = 0; i < listaNomesArray.length; i++){
-        if(listaNomesArray[i] === paramSerach){
-            encounter = true;
-            res.end(`O nome encontrado é: ${listaNomesArray[i]}`);
-            break;
+export function arrayFake(nam) {
+    for (var i = 0; i < listaNomesArray.length; i++) {
+        if (listaNomesArray[i] === nam) {
+            return listaNomesArray[i];
         }
-
-       
     }
-     if(!encounter){
-            res.end("Nenhum nome encontrado");
-        }
+    return null;
+}
+
+export function inserArrayFake(nam) {
+    listaNomesArray.push(nam);
+    return true;
 }
