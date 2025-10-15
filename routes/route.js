@@ -8,4 +8,6 @@ routers.get('/list', listMiddleware.listVerify, listController.listSerach);
 
 routers.post('/input', listMiddleware.insertName, listController.insertDatabase);
 
+routers.put('/update/:id', listMiddleware.updateName, listController.validateUpdateName);
+
 export default routers;
