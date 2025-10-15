@@ -51,3 +51,26 @@ export function validateUpdateName(req, res){
         res.status(500).json({erroMensageUpdate: "Erro ao alterar usuário"});
     }
 }
+
+export function deleteName(req, res) {
+    const nameAsDelete = req.query.name?.trim(); 
+
+    
+
+    if (!nameAsDelete) {
+        return res.status(400).json({ erroMensage: "Nome inválido ou não informado" });
+    }
+
+    const statusDelete = listModel.deleteArr(nameAsDelete);
+
+    if (statusDelete) {
+        res.status(200).json({
+            statusMenssage: "Nome deletado com sucesso",
+            nome: nameAsDelete
+        });
+    } else {
+        res.status(404).json({
+            menssageError: "Erro ao deletar nome escolhido"
+        });
+    }
+}

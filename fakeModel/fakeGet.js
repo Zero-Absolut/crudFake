@@ -48,3 +48,26 @@ export function updateNewName(idUpdate){
 
     return found;
 }
+
+export function deleteArr(name){
+  
+    let start = 0;
+    let flagController = false;
+
+    for(let i = 0; i < dadosUsuarios.length; i++){
+        if(dadosUsuarios[i].nome === name){
+            start = i;
+            flagController = true;
+            break;
+        }
+    }
+   dadosUsuarios.splice(start, 1);
+
+   if(flagController){
+        return true;
+   }else{
+    return false;
+   }
+
+    
+}

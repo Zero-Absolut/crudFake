@@ -36,3 +36,13 @@ export function updateName(req, res, next){
         next();
     }
 }
+
+export function validateDelete(req, res, next){
+    console.log(req.query);
+    if(!req.query.name){
+        return res.status(400).json({erroMensage: "Nenhum parametro para busca"});
+
+    }else{
+        next();
+    }
+}

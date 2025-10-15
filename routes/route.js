@@ -10,4 +10,6 @@ routers.post('/input', listMiddleware.insertName, listController.insertDatabase)
 
 routers.put('/update/:id', listMiddleware.updateName, listController.validateUpdateName);
 
+routers.delete('/delete', listMiddleware.validateDelete, listController.deleteName);
+
 export default routers;
